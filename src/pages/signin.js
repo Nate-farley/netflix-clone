@@ -19,11 +19,11 @@ export default function SignIn() {
   const handleSignin = (event) => {
     event.preventDefault();
 
-    return firebase
+    firebase
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
       .then(() => {
-        history.push(ROUTES.BROWSE);
+        history(ROUTES.BROWSE);
       })
       .catch((error) => {
         setEmailAddress('');
