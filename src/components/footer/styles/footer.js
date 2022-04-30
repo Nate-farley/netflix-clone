@@ -2,15 +2,14 @@ import styled from 'styled-components/macro';
 
 
 export const Container = styled.div`
-    display: flex;
-    padding: 70px 56px;
-    margin: auto;
-    max-width: 1000px;
-    flex-direction: column;
-
-    @media (max-width: 1000px){
-        padding: 70px 30px;
-    }
+  display: flex;
+  padding: 70px 0;
+  margin: auto;
+  max-width: 1000px;
+  flex-direction: column;
+  @media (max-width: 1000px) {
+    padding: 70px 30px;
+  }
 `;
 
 export const Column = styled.div`
@@ -21,7 +20,7 @@ export const Column = styled.div`
 
 export const Row = styled.div`
     display: grid;
-    grid-template-colums: repeat(auto-fill, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     grid-gap: 15px;
 
     @media (max-width: 1000px) {
@@ -51,7 +50,7 @@ export const Text = styled.p`
 
 `;
 
-export const Break = styled.p`
+export const Break = styled.div`
     flex-basis: 100%;
     height: 0;
 
