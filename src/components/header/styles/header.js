@@ -3,40 +3,33 @@ import styled from 'styled-components/macro';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 export const Background = styled.div`
-    display: flex;
-    flex-direction: column;
-    background: url(${({src}) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')}) top left / cover no-repeat;
-
-    @media (max-width: 1100px) {
-        ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && `background: none;`}
-    } 
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')}) top left / cover
+    no-repeat;
+  @media (max-width: 1100px) {
+    ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && `background: none;`}
+  }
 `;
-
-export const Group = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-
 
 export const Container = styled.div`
+  display: flex;
+  margin: 0 56px;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  a {
     display: flex;
-    margin: 0 56px;
-    height: 64px;
-    padding: 18px 0;
-    justify-content: space-between;
-    align-items: center;
-
-    a {
-        display: flex;
-    }
-
-    @media (max-width: 1000px) {
-        margin: 0 30px;
-    }
+  }
+  @media (max-width: 1000px) {
+    margin: 0 30px;
+  }
 `;
 
-export const Picture = styled.div`
+
+
+
+export const Picture = styled.button`
     background: url(${({ src }) => src});
     background-size: contain;
     border: 0;
@@ -44,6 +37,27 @@ export const Picture = styled.div`
     height: 32px;
     cursor: pointer;
 `;
+
+export const Link = styled.p`
+  color: #fff;
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+  cursor: pointer;
+  &:hover {
+    font-weight: bold;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 
 export const Dropdown = styled.div`
     display: none;
@@ -53,6 +67,32 @@ export const Dropdown = styled.div`
     width: 100px;
     top: 32px;
     right: 10px;
+
+
+    ${Group}:last-of-type ${Link} {
+        cursor: pointer;
+    };
+    
+    ${Group} {
+        margin-bottom: 10px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        ${Link}, ${Picture} {
+            cursor: default;
+        }
+    }
+    button {
+        margin-right: 10px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
 
 `;
 
@@ -126,21 +166,7 @@ export const Text = styled.p`
     margin: 0;
 `;
 
-export const Link = styled.p`
-    color: white;
-    text-decoration: none;
-    margin-right: 30px;
-    font-weight: ${({ active}) => (active === 'true' ? '700' : 'normal' )};
-    cursor: pointer;
 
-    &:hover {
-        font-weight: bold;
-    }
-
-    &:last-of-type {
-        margin-right: 0;
-    }
-`;
 
 export const FeatureCallOut = styled.h2`
     color: white;
