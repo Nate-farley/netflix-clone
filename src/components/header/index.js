@@ -1,8 +1,8 @@
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import {Link as ReactRouterLink} from 'react-router-dom';
-import { Background, ButtonLink, Container, Logo, Feature, Text, Link, FeatureCallOut, Group, Picture, Profile, Dropdown} from './styles/header';
+import { Background, ButtonLink, Container, Logo, Feature, Text, Link, FeatureCallOut, Group, Picture, Profile, Dropdown, Search , SearchIcon, SearchInput} from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
     return bg ? <Background {... restProps}>{children}</Background> : children;
@@ -18,6 +18,25 @@ Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...restProps})
 
 Header.Profile = function HeaderProfile({ children, ...restProps}) {
     return <Profile {...restProps}>{children}</Profile>
+};
+
+Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps}) {
+    const [ searchAvtive, setSearchActive ] = useState(false);
+
+    return (
+        <Search {...restProps}>
+        <SearchIcon onClick={()=> setSearchActive((searchAvtive) => !searchAvtive)}
+        >
+            <img src="images/icons/search.png" alt="search" />
+        </SearchIcon>
+        <SearchInput
+            value={searchTerm}
+            onchange={({ target }) => setSearchTerm(target.value)}
+            placeholder="Search films and series"
+            active={searchAvtive}
+        />
+        </Search>
+    );
 };
 
 Header.Picture = function HeaderPicture({ src, ...restProps}) {
