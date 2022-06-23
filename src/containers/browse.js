@@ -5,6 +5,7 @@ import { Loading, Header } from '../components';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
 import Card from "../components/card";
+import { FooterContainer } from './footer';
 
 
 export function BrowseContainer({ slides }) {
@@ -93,15 +94,12 @@ export function BrowseContainer({ slides }) {
               ))}
             </Card.Entities>
             <Card.Feature category={category}>
-              <Player>
-                <Player.Button />
-                <Player.Video src="/videos/bunny.mp4" />
-              </Player>
+           
             </Card.Feature>
           </Card>
         ))}
       </Card.Group>
-
+      <FooterContainer />
      </>
      ) :(
         <SelectProfileContainer user={user} setProfile={setProfile} />

@@ -134,6 +134,7 @@ export const PlayButton = styled.button`
     font-size: 20px;
     margin-top: 30px;
     cursor: pointer;
+    transition: transform 0.2s;
     
 
     &:hover {
