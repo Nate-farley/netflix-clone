@@ -1,9 +1,10 @@
 import React from "react";
-import { Footer } from '../components';
+import { render } from "@testing-library/react";
+import { Footer } from '../../components';
 
-
-export function FooterContainer(){
-    return (
+describe('<Footer />', ()=> {
+    it('renders the <Footer /> with populated data', () => {
+        const { container, getByText } = render( 
         <Footer>
             <Footer.Title>Questions? Contact Us.</Footer.Title>
             <Footer.Break />
@@ -40,5 +41,15 @@ export function FooterContainer(){
             <Footer.Break />
             <Footer.Text>Netflix United Kingdom</Footer.Text>
         </Footer>
-    )
-}
+        );
+        
+        expect(getByText('Questions? Contact Us.')).toBeTruthy();
+        expect(getByText('FAQ')).toBeTruthy();
+        expect(getByText('Investor Relations')).toBeTruthy();
+        expect(getByText('Ways to Watch')).toBeTruthy();
+        expect(getByText('Coporate Information')).toBeTruthy();
+        expect(getByText('Netflix Originals')).toBeTruthy();
+        expect(container.firstChild).toMatchSnapshot();
+
+    })
+})
