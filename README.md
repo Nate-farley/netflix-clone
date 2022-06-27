@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="src/utils/logo.svg" alt="Logo" width="80" height="80" />
+    <img src="utils/logo.svg" alt="Logo" width="80" height="80" />
 </div>
 
 <br />
