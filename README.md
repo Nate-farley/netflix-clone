@@ -37,6 +37,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+
+<br />
+<br />
 <div align="center">
     <img src="screenshot.jpg" alt="screenshot" width="500" height="350" />
 </div>
