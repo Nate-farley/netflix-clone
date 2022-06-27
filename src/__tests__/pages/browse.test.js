@@ -47,7 +47,7 @@ jest.mock('../../utils', () => ({
 
 const firebase = {
   auth: jest.fn(() => ({
-    currentUser: { displayName: 'Karl', photoURL: 1, email: 'karlhadwen@gmail.com' },
+    currentUser: { displayName: 'test', photoURL: 1, email: 'teat@test.com' },
     signOut: jest.fn(() => Promise.resolve('I am signed out!')),
   })),
   firestore: jest.fn(() => ({
@@ -67,5 +67,16 @@ describe('<Browse />', () => {
         </FirebaseContext.Provider>
       </Router>
     );
+
+    await act(async () => {
+        await fireEvent.change(getByPlaceholderText('Email address'), { target: { value: 'karl@gmail.com' } });
+        await fireEvent.change(getByPlaceholderText('Password'), { target: { value: 'password' } });
+        fireEvent.click(getByTestId('sign-in'));
+  
+        expect(getByPlaceholderText('Email address').value).toBe('karl@gmail.com');
+        expect(getByPlaceholderText('Password').value).toBe('password');
+        expect(queryByTestId('error')).toBeFalsy();
+      });
+
   });
 });
