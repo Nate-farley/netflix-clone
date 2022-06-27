@@ -1,6 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Accordion /> opens and closes the <Accordion /> component 1`] = `
+exports[`<Accordion /> opens and closes the <Accordion /> component 1`] = `null`;
+
+exports[`<Accordion /> opens and closes the <Accordion /> component 2`] = `
 <div
   class="accordion__Container-sc-1wnyt6p-0 kRFsOa"
 >
@@ -23,12 +25,12 @@ exports[`<Accordion /> opens and closes the <Accordion /> component 1`] = `
         >
           What is Netflix?
           <img
-            alt="Close"
-            src="/images/icons/close-slim.png"
+            alt="Open"
+            src="/images/icons/add.png"
           />
         </div>
         <div
-          class="accordion__Body-sc-1wnyt6p-6 kngHdP open"
+          class="accordion__Body-sc-1wnyt6p-6 kngHdP closed"
           data-testid="accordion-body"
         >
           <span>
