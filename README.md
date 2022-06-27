@@ -37,7 +37,7 @@
 ## About The Project
 
 <div align="center">
-    <img src="screenshot.jpg" alt="screenshot" width="80" height="80" />
+    <img src="screenshot.jpg" alt="screenshot" width="240" height="240" />
 </div>
 
 This application called the (Netflix clone) was built using React (Custom Hooks, Context), Firebase & Styled Components. In this build is a fully funcational application where it allows the user to view the homepage, sign in, sign up, and browse. Most pages created are using protected routes with auth listeners. The authentication is handle by Firebase and all data is stored through firestore and retrieved using a custom hook.
@@ -87,7 +87,11 @@ _Below is instruction your audience on installing and setting up your app. This 
    ```sh
    npm install
    ```
-3. Create a firebase account here https://firebase.google.com/
+3. Create a firebase account here 
+
+ ```sh
+   https://firebase.google.com/
+   ```
 
 4. Enter your API in `.env`
    ```js
